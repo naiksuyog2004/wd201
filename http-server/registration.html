@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-    <!-- <link rel="stylesheet" href="registration.css"> -->
-    <!-- <link rel="stylesheet" href="jquery-ui.min.css"> -->
     <style>
         * {
             margin: 0;
@@ -14,15 +12,15 @@
         }
 
         #fieldset1 {
+            background: beige;
             margin-bottom: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            width: 50%;
             margin-left: auto;
             margin-right: auto;
+            width: 60%;
+            padding: 19px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
             box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1), -5px 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.1);
-            background: beige;
         }
 
         #fieldset2 {
@@ -42,9 +40,9 @@
             margin-right: auto;
             margin-bottom: 5px;
             font-size: 40px;
+            color: black;
             text-align: center;
             font-weight: bold;
-            color: black;
         }
 
         form {
@@ -62,7 +60,7 @@
         }
 
         th, td {
-            /* background: cornsilk; */
+            background: cornsilk;
             padding: 10px;
             text-align: left;
         }
@@ -87,13 +85,13 @@
         }
 
         input[type="checkbox"] {
-            margin-right: 5px;
+            margin-right: 4px;
         }
 
         #submit {
-            padding: 10px 20px;
             background-color: #007bff;
             color: #fff;
+            padding: 10px 20px;
             font-size: 18px;
             border: none;
             border-radius: 4px;
@@ -156,8 +154,8 @@
     </fieldset>
 
     <!-- back to home and Projects -->
-    <a href="./project">&lt;- Projects</a>
-    <a href="/">&lt;- Back to home</a>
+<!--     <a href="./project">&lt;- Projects</a>
+    <a href="/">&lt;- Back to home</a> -->
 
     <!-- <script src="registration.js"></script> -->
     <script>
@@ -166,9 +164,8 @@
         const maxDate = new Date();
 
         minDate.setFullYear(currentDate.getFullYear() - 55);
-        // minDate.setDate(minDate.getDate() + 1);
-        maxDate.setFullYear(currentDate.getFullYear() - 18);
-        // maxDate.setDate(maxDate.getDate() + 1);  
+        
+        maxDate.setFullYear(currentDate.getFullYear() - 18);  
 
         document.getElementById("dob").setAttribute("min", minDate.toISOString().split('T')[0]);
         document.getElementById("dob").setAttribute("max", maxDate.toISOString().split('T')[0]);
