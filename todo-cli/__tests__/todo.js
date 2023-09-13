@@ -22,17 +22,17 @@ describe("Todolist Test Suite", () => {
   beforeAll(() => {
     [
       {
-        title: "Doctor appointment",
+        title: "Go goa",
         completed: false,
         dueDate: yesterday,
       },
       {
-        title: "Go Gym",
+        title: "Go Bali",
         completed: false,
         dueDate: today,
       },
       {
-        title: "International",
+        title: "Go Denmark",
         completed: false,
         dueDate: tomorrow,
       },
