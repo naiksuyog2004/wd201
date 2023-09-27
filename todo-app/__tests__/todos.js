@@ -34,7 +34,7 @@ describe("Todo Application", function () {
     expect(parsedResponse.id).toBeDefined();
   });
 
-  test("Marks a todo with the given ID as complete", async () => {
+  test("Marks a todo as complete", async () => {
     const response = await agent.post("/todos").send({
       title: "Buy milk",
       dueDate: new Date().toISOString(),
@@ -71,9 +71,7 @@ describe("Todo Application", function () {
     expect(parsedResponse[3]["title"]).toBe("Buy ps3");
   });
 
-  test("Deletes a todo with the given ID if it exists and sends a boolean response", async () => {
-    // FILL IN YOUR CODE HERE
-
+  test("Deletes a todo", async () => {
     const response = await agent.post("/todos").send({
       title: "Buy Everything",
       dueDate: new Date().toISOString(),
