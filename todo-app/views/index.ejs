@@ -7,8 +7,46 @@
     <meta name="csrf-token" content="<%= csrfToken %>">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Suyog Todo App</title>
-   
+    <title>Todo App</title>
+    <script>
+        var token = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+        const updateTodo = (id) => {
+            const bool = document.querySelector(`#checkbox-${id}`).checked; 
+            console.log(bool);
+            fetch(`/todos/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body : JSON.stringify({
+                    _csrf : token,
+                    completed : bool
+                })
+            })
+            .then((res) => {
+                if (res.ok) {
+                    window.location.reload();
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        };
+        function deleteTodo(id) {
+            fetch(`/todos/${id}`, {
+                method: "delete",
+                headers: { "Content-type": "application/json"},
+                body: JSON.stringify({
+                    "_csrf":token
+                })
+            })
+            .then((res) => {
+                if(res.ok) {
+                    window.location.reload()
+                }
+            }).catch((error) => console.error(error))
+        }
+    </script>
 </head>
 <body>
     <div class="grid grid-cols-6">
